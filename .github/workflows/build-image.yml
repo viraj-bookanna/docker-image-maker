@@ -13,8 +13,6 @@ jobs:
           sudo sh get-docker.sh
       - name: Login to Docker
         run: sudo docker login -u "${{secrets.DOCKERHUB_USERNAME}}" -p "${{secrets.DOCKERHUB_PASSWORD}}"
-      - name: Copying Dockerfile
-        run: mv Dockerfile Dockerfile
       - name: Docker Building
         run: sudo docker build . -t virajccx/custom-linux:latest
       - name: Docker Pushing
