@@ -1,0 +1,21 @@
+name: Image_Build_Script
+on: workflow_dispatch
+jobs:
+  Docker-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Installing Requirements
+        run: |
+          sudo apt-get update
+          sudo apt-get install curl wget -y
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+      - name: Login to Docker
+        run: sudo docker login -u "${{secrets.DOCKERHUB_USERNAME}}" -p "${{secrets.DOCKERHUB_PASSWORD}}"
+      - name: Copying Dockerfile
+        run: mv Dockerfile2 Dockerfile
+      - name: Docker Building
+        run: sudo docker build . -t reverselive/custom-linux:latest
+      - name: Docker Pushing
+        run: sudo docker push reverselive/custom-linux:latest
