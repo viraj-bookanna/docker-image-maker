@@ -16,6 +16,6 @@ jobs:
       - name: Copying Dockerfile
         run: mv Dockerfile Dockerfile
       - name: Docker Building
-        run: sudo docker build . -t reverselive/custom-linux:latest
+        run: sudo docker build . -t virajccx/custom-linux:latest
       - name: Docker Pushing
-        run: sudo docker push reverselive/custom-linux:latest
+        run: sudo docker push virajccx/custom-linux:latest
