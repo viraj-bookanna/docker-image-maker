@@ -16,4 +16,4 @@ jobs:
       - name: Docker Building
         run: sudo docker build . -t virajccx/custom-linux:latest
       - name: Docker Pushing
-        run: sudo docker push virajccx/custom-linux:latest
+        run: sudo docker push virajccx/apache-php:latest
