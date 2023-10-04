@@ -1,8 +1,5 @@
-FROM ubuntu:latest
+FROM alpine:latest
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt install software-properties-common -y && apt-get upgrade -y && apt-get install -y --no-install-recommends \
-    && apt-get clean \
-    && apt-get -y install apache2 \
-    && add-apt-repository -y ppa:ondrej/php && apt-get update && apt-get install -y php php-common php-mysql php-xml php-xmlrpc php-curl php-gd php-imagick php-cli php-dev php-imap php-mbstring php-soap php-zip php-intl \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk upgrade
+RUN apk add --no-cache apache2 php php-common php-mysqli php-xml php-curl php-gd php-cli php-imap php-mbstring php-opcache php-soap php-zip php-intl
 COPY filemanager.php /var/www/html/filemanager.php
