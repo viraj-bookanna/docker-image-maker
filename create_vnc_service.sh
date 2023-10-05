@@ -1,4 +1,4 @@
-sudo cat <<EOF > /etc/systemd/system/vncserver@.service
+cat <<EOF > /etc/systemd/system/vncserver@.service
 [Unit]
 Description=Start TightVNC server at startup
 After=syslog.target network.target
@@ -18,5 +18,5 @@ ExecStop=/usr/bin/vncserver -kill :%i
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl daemon-reload
-sudo systemctl enable vncserver@1.service
+systemctl daemon-reload
+systemctl enable vncserver@1.service

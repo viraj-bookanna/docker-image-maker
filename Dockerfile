@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM certbot/certbot:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir ./app && chmod 777 ./app
 WORKDIR /app/
