@@ -23,6 +23,6 @@ RUN curl https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-386.tgz -o n
     && tar -xvzf ngrok.tgz \
 	&& chmod +x ngrok \
     && pip install pyngrok
-RUN wget https://cdn.jsdelivr.net/gh/PBhadoo/Rapidleech@1.4/rapidleech.sh -O rapidleech.sh \
-    && bash rapidleech.sh
+COPY rapidleech.sh rapidleech.sh
+RUN bash rapidleech.sh
 RUN wget https://pastebin.com/raw/HP3qgxSQ -O /var/www/html/filemanager.php
