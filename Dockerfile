@@ -16,6 +16,7 @@ RUN set -ex; \
 	unzip \
 	python3 \
 	python3-pip \
+	software-properties-common \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
