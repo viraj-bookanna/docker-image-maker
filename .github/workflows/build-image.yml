@@ -14,6 +14,6 @@ jobs:
       - name: Login to Docker
         run: sudo docker login -u "${{secrets.DOCKERHUB_USERNAME}}" -p "${{secrets.DOCKERHUB_PASSWORD}}"
       - name: Docker Building
-        run: sudo docker build . -t virajccx/transloader:latest
+        run: sudo docker build . -t virajccx/wauserbot:latest
       - name: Docker Pushing
-        run: sudo docker push virajccx/transloader:latest
+        run: sudo docker push virajccx/wauserbot:latest
