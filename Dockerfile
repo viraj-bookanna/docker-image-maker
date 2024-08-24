@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt update -y && apt upgrade -y
-RUN apt install wget -y
+RUN yes | apt install wget curl
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg -i google-chrome-stable_current_amd64.deb || true
 RUN apt --fix-broken install -y
