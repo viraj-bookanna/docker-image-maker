@@ -11,4 +11,3 @@ RUN mkdir -p $NVM_DIR
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION
 RUN . $NVM_DIR/nvm.sh && node -v && npm -v
-RUN nvm install 20
