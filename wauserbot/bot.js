@@ -17,6 +17,9 @@ function loadJsonFile(filePath) {
 const responses = loadJsonFile(`${__dirname}/responses.json`);
 const client = config.client;
 var db;
+client.on('qr', (qr) => {
+    console.log('QR received\nUSER NOT AUTHENTICATED PLEASE AUTHENTICATE BEFORE USING BOT');
+});
 client.on('ready', async () => {
 	await dbClient.connect();
 	db = dbClient.db('wauserbot').collection('users');
