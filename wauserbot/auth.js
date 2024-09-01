@@ -4,7 +4,7 @@ const qrcode = require('qrcode-terminal');
 const config = require('./config');
 
 clean();
-const client = new Client(config.client_config);
+const client = config.client;
 client.on('qr', (qr) => {
     console.log('QR received');
 	qrcode.generate(qr, {small: true});
