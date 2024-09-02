@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "creating user.."
-NEW_USER="ubuntu"
+NEW_USER="viraj"
 while true; do
     if id "$NEW_USER" &>/dev/null; then
         echo "User $NEW_USER already exists. Please choose another username."
