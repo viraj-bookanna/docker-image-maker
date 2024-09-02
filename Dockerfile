@@ -1,4 +1,6 @@
-FROM node:16.20.2-alpine
-RUN apk add --no-cache \
-  chromium \
-  ca-certificates
+FROM ubuntu:latest
+WORKDIR /app
+COPY . /app
+RUN chmod +x newuser.sh
+RUN bash newuser.sh
+EXPOSE 2222

@@ -1,2 +1,0 @@
-# wauserbot
-whatsapp userbot
